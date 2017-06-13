@@ -19,15 +19,16 @@ class Solution:
         idx = tin.index(val)
         leftlen,rightlen = 0,0
         for  i in tin:
-         	if i != idx:
-         		leftlen += 1
-
+         	if i == val:
+                    break
+         	leftlen += 1
 
         rightlen = len(tin) - leftlen-1 
-        root.left = self.reConstructBinaryTree(pre[1:1+leftlen],tin[0:idx-1])
-        root.right = self.reConstructBinaryTree(pre[1+leftlen:],tin[idx:idx+rightlen])
-
-        pass
+        print pre[1:1+leftlen],tin[:idx]
+        print pre[1+leftlen:],tin[idx+1:]
+        root.left = self.reConstructBinaryTree(pre[1:1+leftlen],tin[:idx])
+        root.right = self.reConstructBinaryTree(pre[1+leftlen:],tin[idx+1:])
+        return root
 pre = [1,2,4,7,3,5,6,8]
 tin = [4,7,2,1,5,3,8,6]
 s = Solution()
