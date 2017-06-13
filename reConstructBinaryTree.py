@@ -21,12 +21,14 @@ class Solution:
         for  i in tin:
          	if i != idx:
          		leftlen += 1
-         	else:
-         		break
+
 
         rightlen = len(tin) - leftlen-1 
-        
-
-
+        root.left = self.reConstructBinaryTree(pre[1:1+leftlen],tin[0:idx-1])
+        root.right = self.reConstructBinaryTree(pre[1+leftlen:],tin[idx:idx+rightlen])
 
         pass
+pre = [1,2,4,7,3,5,6,8]
+tin = [4,7,2,1,5,3,8,6]
+s = Solution()
+s.reConstructBinaryTree(pre, tin)
