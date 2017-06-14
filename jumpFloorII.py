@@ -2,12 +2,13 @@
 class Solution:
     def jumpFloorII(self, number):
         # write code here
-        if number <0:
-            return 0
-        elif number <=1:
-            return 1
-        else:
-            return self.jumpFloorII(number-1)+self.jumpFloorII(number-2)
+        if number <=2:
+            return number
+        f = [0]*(number+1)
+        f[1] = 1
+        f[2] = 2
+        for i in xrange(2,number+1):
+            
 
 if __name__ == '__main__':
     s = Solution()
