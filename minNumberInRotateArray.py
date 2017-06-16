@@ -2,16 +2,18 @@
 class Solution:
     def minNumberInRotateArray(self, rotateArray):
         # write code here
+        if rotateArray==None or len(rotateArray)==0:
+        	return 0
         start,end = 0,len(rotateArray)-1
         # mid = (start + end) / 2
         while start<end:
         	mid = (start + end) / 2
-        	if mid+1 < len(rotateArray) and rotateArray[mid]>rotateArray[mid+1]:
+        	if mid+1< len(rotateArray) and rotateArray[mid]>rotateArray[mid+1]:
         		return rotateArray[mid+1]
-        	elif mid+1 < len(rotateArray) and rotateArray[mid]<rotateArray[mid+1]:
-        		start = mid+1
-        	else:
+        	elif mid< len(rotateArray) and rotateArray[mid]<rotateArray[end]:
         		end = mid
+        	else:
+        		start = mid
         return rotateArray[mid]
 s = Solution()
-print s.minNumberInRotateArray([6501,6828,6963,7036,7422,7674,8146,8468,8704,8717,9170,9359,9719,9895,9896,9913,9962,154,293,334,492,1323,1479,1539,1727,1870,1943,2383,2392,2996,3282,3812,3903,4465,4605,4665,4772,4828,5142,5437,5448,5668,5706,5725,6300,6335])
+print s.minNumberInRotateArray([3,4,5,1,2])

@@ -1,6 +1,8 @@
 # -*- coding:utf-8 -*-
 """
 输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。
+
+in python . if n is negative number, left shift may run out of memory
 """
 class Solution:
     def NumberOf1(self, n):
