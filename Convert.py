@@ -9,4 +9,13 @@ class Solution:
     def Convert(self, pRootOfTree):
         # write code here
         
+
+        pass
+    def ConvertLeft(self, pRootOfTree):
+        # write code here
+        
+        
+        pass
+    def ConvertRight(self, pRootOfTree):
+
         pass
