@@ -9,7 +9,8 @@ class Solution:
     def Convert(self, pRootOfTree):
         # write code here
         
-
+        if not pRootOfTree:
+        	return pRootOfTree
         pass
     def ConvertLeft(self, pRootOfTree):
         # write code here
@@ -17,5 +18,5 @@ class Solution:
         
         pass
     def ConvertRight(self, pRootOfTree):
-
+        # write code here
         pass
