@@ -38,9 +38,6 @@ class Solution:
             nums.extend(right[j:])
         return nums
 
-
-        pass
-
 s =Solution()
 data = [1,2,3,4,5,6,7,0]
 print s.InversePairs(data)
