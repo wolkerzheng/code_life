@@ -44,3 +44,37 @@ def BuildTree(nums,idx):
 # bfs(root)
 # dfs(root)
 
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+def BuildListNode(nums):
+
+	tmpHead = ListNode(-1)
+	if nums is None or len(nums)<=0:
+		return tmpHead.next
+	
+	
+	res = tmpHead
+	for n in nums:
+		p = ListNode(n)
+		tmpHead.next = p
+		tmpHead = tmpHead.next 
+	
+	return res.next
+
+def printListNode(listnode):
+
+	if not listnode:
+		return None
+	res=[]
+	while listnode:
+		res.append(listnode.val)
+		listnode = listnode.next
+	# print res
+	return res
+
+if __name__ == '__main__':
+	
+	print printListNode(BuildListNode([1,1,2,3,3,3,4,4,5]))

@@ -10,20 +10,21 @@ class Solution:
 
         if pHead is None or pHead.next is None:
         	return pHead
-
         tmpHead = ListNode(-1)
         tmpHead.next = pHead
         last = tmpHead
-        p = pHead.next
-        while last.next:
-
-        	if last.val == p.val:
-        		p = p.next
-        		while p.next  and last.val == p.val:
+        p = pHead
+        while p and p.next:
+        	if p.next.val == p.val:
+        		val = p.val
+        		while p and p.val == val:
         			p = p.next
-	        	last.next = p
+        		last.next = p
 	        else:
-	        	last = last.next
+	        	last = p
 	        	p = p.next
-
         return tmpHead.next
+
+SS =Solution()
+t = SS.deleteDuplication(util.BuildListNode([1,1,2,3,3,3,4,4,5]))
+print util.printListNode(t)
