@@ -10,24 +10,27 @@ class Solution:
     def KthNode(self, pRoot, k):
         # write code here
         if pRoot is None or k<=0:
-        	return None
-        res= []
-        stack = [pRoot]
-
-        while stack:
+            return None
+        
+        stack = []
+        idx = 1
+        while pRoot or stack:
             
-            p = stack[-1]
-            if p.right:
-                stack.append(p.right)
-            if p.left:
-                stack.append(p.left)
-            if not p.left and not p.right:
-                
-        print res
+            while pRoot:
+                stack.append(pRoot)
+                pRoot = pRoot.left
+            pRoot = stack.pop(-1)
+            if idx == k:
+                return pRoot
+            idx += 1
+            pRoot = pRoot.right 
+        return None
+
+        # print res
 
 
 n1 = [8,8,7,9,2,'#','#','#','#',4,7]
-nums = [8,9,2]
+nums = [8,2,9]
 root1 = util.BuildTree(n1,1)
 root2 = util.BuildTree(nums,1)
 s = Solution()

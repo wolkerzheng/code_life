@@ -72,8 +72,8 @@ def printListNode(listnode):
 	while listnode:
 		res.append(listnode.val)
 		listnode = listnode.next
-	# print res
-	return res
+	print res
+	# return res
 
 if __name__ == '__main__':
 	

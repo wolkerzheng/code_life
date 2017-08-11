@@ -11,10 +11,14 @@ class Solution:
 
         if pNode is None:
         	return None
-        res= []
-        stack = pNode
-        while stack:
-        	p = stack.pop(-1)
-        	if p.right:
-        		stack.append()
-        pass
+        if pNode.right:
+            pNode = pNode.right
+            while pNode.left:
+                pNode = pNode.left
+            return pNode
+        while pNode.next:
+            p = pNode.next
+            if p.left == pNode:
+                return p
+            pNode = pNode.next
+        return None
