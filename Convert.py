@@ -11,12 +11,23 @@ class Solution:
         
         if not pRootOfTree:
         	return pRootOfTree
-        pass
-    def ConvertLeft(self, pRootOfTree):
-        # write code here
         
-        
-        pass
-    def ConvertRight(self, pRootOfTree):
-        # write code here
-        pass
+        self.ConvertHelp(pRootOfTree)
+        while pRootOfTree.left:
+            pRootOfTree = pRootOfTree.left
+        return pRootOfTree
+    def ConvertHelp(self,root):
+
+        if root.left:
+            pre =  self.ConvertHelp(root.left)
+            while pre.right:
+                pre = pre.right
+            pre.right = root
+            root.left = pre
+        if root.right:
+            next = self.ConvertHelp(root.right)
+            while next.left:
+                next = next.left
+            next.left = root
+            root.right = next
+        return root
